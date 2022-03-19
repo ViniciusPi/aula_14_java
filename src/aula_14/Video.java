@@ -10,7 +10,7 @@ public class Video implements AcoesVideo {
 
     public Video(String titulo) {
         this.titulo = titulo;
-        this.avaliacao = 1;
+        this.avaliacao = 0;
         this.views = 0;
         this.numeroDeLikes = 0;
         this.reproduzindo = false;
@@ -30,7 +30,11 @@ public class Video implements AcoesVideo {
     }
 
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int media;
+        media = (int) ((this.avaliacao + avaliacao) / this.views);
+
+        this.avaliacao = media;
+
     }
 
     public int getViews() {
@@ -66,15 +70,13 @@ public class Video implements AcoesVideo {
     @Override
     public void pause() {
         setReproduzindo(false);
-        this.avaliacao--;
+
     }
 
     @Override
     public void like() {
         this.numeroDeLikes++;
-        if (this.avaliacao<5){
-            this.avaliacao++;
-        }
+
     }
 
     @Override

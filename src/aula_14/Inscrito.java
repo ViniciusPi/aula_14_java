@@ -3,7 +3,7 @@ package aula_14;
 public class Inscrito extends Pesssoa {
     private String login;
     private int videosAssistidos;
-    private Video video;
+
 
     public Inscrito(String nome, int idade, String sexo, String login) {
         super(nome, idade, sexo);
@@ -14,8 +14,8 @@ public class Inscrito extends Pesssoa {
         this.videosAssistidos++;
         this.ganharXP();
         video.play();
-        video.like();
-        video.setAvaliacao(video.getAvaliacao() + 1);
+
+
 
     }
 
@@ -31,13 +31,6 @@ public class Inscrito extends Pesssoa {
         return videosAssistidos;
     }
 
-    public Video getVideo() {
-        return video;
-    }
-
-    public void setVideo(Video video) {
-        this.video = video;
-    }
 
     public void setVideosAssistidos(int videosAssistidos) {
         this.videosAssistidos = videosAssistidos;
